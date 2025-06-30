@@ -1,7 +1,5 @@
 name: bible
 description: "A lovable bible app"
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -24,7 +22,15 @@ dependencies:
   connectivity_plus: ^6.1.4
   dio: ^5.8.0+1
   oktoast: ^3.4.0
+  get_storage: ^2.1.1
+  pretty_dio_logger: ^1.4.0
+  flutter_switch: ^0.3.2
 
+  flutter_secure_storage: any
+  uuid: any
+  bucx: any
+  flutter_spinkit: any
+  get: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

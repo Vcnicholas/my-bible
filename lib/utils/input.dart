@@ -1,5 +1,5 @@
-import 'package:bucx/utils/pallet.dart';
-import 'package:bucx/utils/widget_extensions.dart';
+import 'package:bible/utils/pallet.dart';
+import 'package:bible/utils/widget_extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -53,7 +53,7 @@ class AppInputField extends StatelessWidget {
   final FloatingLabelBehavior? floatingLabelBehavior;
 
   const AppInputField({
-    Key? key,
+    super.key,
     this.autovalidateMode,
     this.style,
     this.inputFormatters,
@@ -97,7 +97,7 @@ class AppInputField extends StatelessWidget {
     this.initialValue,
     this.floatingLabelBehavior,
 
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -242,7 +242,7 @@ class AppSearchField extends StatelessWidget {
   final FloatingLabelBehavior? floatingLabelBehavior;
 
   const AppSearchField({
-    Key? key,
+    super.key,
     this.autovalidateMode,
     this.style,
     this.inputFormatters,
@@ -286,7 +286,7 @@ class AppSearchField extends StatelessWidget {
     this.initialValue,
     this.floatingLabelBehavior,
 
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

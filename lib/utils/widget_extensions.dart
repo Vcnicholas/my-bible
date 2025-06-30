@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 const ext = 0;
 
 extension WidgetExtensions on double {
-  Widget get sbH => SizedBox(height: this.h);
-  Widget get sbW => SizedBox(width: this.w);
+  Widget get sbH => SizedBox(height: h);
+  Widget get sbW => SizedBox(width: w);
   EdgeInsetsGeometry get padA => EdgeInsets.all(this);
   EdgeInsetsGeometry get padV => EdgeInsets.symmetric(vertical: h);
   EdgeInsetsGeometry get padH => EdgeInsets.symmetric(horizontal: w);

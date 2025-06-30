@@ -1,20 +1,21 @@
 import 'dart:convert';
-import 'dart:math';
 
 import 'package:bible/data/services/user_services.dart';
 
 import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
 import '../../domain/model/auth_response.dart';
+import '../../domain/model/kyc_response.dart';
 import '../../domain/model/login.dart';
 import '../../domain/model/secure.dart';
-import '../../domain/model/users.dart';
 import '../../domain/model/verify.dart';
 import '../../domain/model/wallet_response.dart';
 import '../../locator.dart';
+import '../../utils/snack_message.dart';
 import '../core/config.dart';
 import '../core/network/error_handler.dart';
 import '../core/network/urlPath.dart';
+import '../core/storage/get_boxes.dart';
 import 'app_cache.dart';
 
 /// This calls implements the UserRemote logic
@@ -38,7 +39,7 @@ class RemoteServices {
         'email': email,
         'password': password,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.login}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -51,7 +52,7 @@ class RemoteServices {
       snackBars(token!, true);
       box.write('token', token.toString());
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -67,7 +68,7 @@ class RemoteServices {
         'email': email,
         'type':'emailVerification'
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.register}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -79,7 +80,7 @@ class RemoteServices {
       // final token = responseData.data?.token;
       // box.write('token', token.toString());
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -95,7 +96,7 @@ class RemoteServices {
         'otp': code,
         'email': email
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.verifyUnboardedEmail}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -104,7 +105,7 @@ class RemoteServices {
             //'Authorization': "Bearer $userToken",
           }));
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -120,7 +121,7 @@ class RemoteServices {
         'email': email,
         'type': 'emailVerification'
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.resendVerificationOtp}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -129,7 +130,7 @@ class RemoteServices {
             //'Authorization': "Bearer $userToken",
           }));
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -151,7 +152,7 @@ class RemoteServices {
 
 
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.updateBiodata}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -160,7 +161,7 @@ class RemoteServices {
             //'Authorization': "Bearer $userToken",
           }));
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -176,7 +177,7 @@ class RemoteServices {
         'email': email,
         'code': accessCode,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.verifyAccessCode}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -185,7 +186,7 @@ class RemoteServices {
             //'Authorization': "Bearer $userToken",
           }));
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -202,7 +203,7 @@ class RemoteServices {
         'password': password,
         'accessCode': accessCode,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.storePassword}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -211,7 +212,7 @@ class RemoteServices {
             //'Authorization': "Bearer $userToken",
           }));
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -225,7 +226,7 @@ class RemoteServices {
       var dataBody = {
         'idempotency_key': idempotencyKey,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.get("${Config.BASEURL}${UrlPath.getKycLinks}",
           //data: dataBody,
           queryParameters: dataBody,
@@ -241,7 +242,7 @@ class RemoteServices {
       final responseData = KycResponse.fromJson(response.data);
       print('the kyc details arw stiored');
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -286,7 +287,7 @@ Future<Response> verifyOTP (String email, String code) async{
       final token = responseData.data?.token;
       box.write('token', token.toString());
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -300,7 +301,7 @@ Future<Response> verifyOTP (String email, String code) async{
       var dataBody = {
         'email': email,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.requestPassword}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -312,7 +313,7 @@ Future<Response> verifyOTP (String email, String code) async{
       final token = responseData.data?.token;
       box.write('token', token.toString());
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -326,7 +327,7 @@ Future<Response> verifyOTP (String email, String code) async{
       var dataBody = {
         'email': email,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.resendPasswordOTP}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -338,7 +339,7 @@ Future<Response> verifyOTP (String email, String code) async{
       final token = responseData.data?.token;
       box.write('token', token.toString());
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -354,7 +355,7 @@ Future<Response> verifyOTP (String email, String code) async{
         'otp':code,
         'password': password,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.resetPassword}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -367,7 +368,7 @@ Future<Response> verifyOTP (String email, String code) async{
       final token = responseData.data?.token;
       box.write('token', token.toString());
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -378,7 +379,7 @@ Future<Response> verifyOTP (String email, String code) async{
     final box = GetStorage();
     String? userToken = box.read('token');
     try {
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.post("${Config.BASEURL}${UrlPath.secureAuth}",
           options: Options(followRedirects: true, headers: {
             "Accept": "application/json",
@@ -390,7 +391,7 @@ Future<Response> verifyOTP (String email, String code) async{
         userServices.secureAth(responseData);
       }
       return responseData;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -404,7 +405,7 @@ Future<Response> verifyOTP (String email, String code) async{
       var dataBody = {
         'fullname': fullname,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.put("${Config.BASEURL}${UrlPath.user}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -414,22 +415,22 @@ Future<Response> verifyOTP (String email, String code) async{
           }));
 
       return response.data.toString();
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
   }
 
 @override
-  Future<String?> changePassword(String old_password,String password,) async {
+  Future<String?> changePassword(String oldPassword,String password,) async {
     final box = GetStorage();
     String? userToken = box.read('token');
     try {
       var dataBody = {
-        'old_password': old_password,
+        'old_password': oldPassword,
         'password': password,
       };
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.put("${Config.BASEURL}${UrlPath.changePassword}",
           data: dataBody,
           options: Options(followRedirects: true, headers: {
@@ -439,7 +440,7 @@ Future<Response> verifyOTP (String email, String code) async{
           }));
 
       return response.data.toString();
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -487,7 +488,7 @@ Future<Response> verifyOTP (String email, String code) async{
           return null;
         }
       }
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -497,7 +498,7 @@ Future<Response> verifyOTP (String email, String code) async{
   Future<Response> getBalance(String token)async{
     final box = GetStorage();
     try {
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.get("${Config.BASEURL}${UrlPath.getWalletBalance}",
           options: Options(followRedirects: true, headers: {
             "Accept": "application/json",
@@ -506,7 +507,7 @@ Future<Response> verifyOTP (String email, String code) async{
       print('the user balance is gotten successfully abd below is the data');
       print(response.data);
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -515,14 +516,14 @@ Future<Response> verifyOTP (String email, String code) async{
   Future<Response> getTransactionsHistory(String token)async{
     final box = GetStorage();
     try {
-      Dio _dio = Dio();
+      Dio dio = Dio();
       var response = await dio.get("${Config.BASEURL}${UrlPath.getTransactionHistory}",
           options: Options(followRedirects: true, headers: {
             "Accept": "application/json",
             'authorization': "Bearer $token",
           }));
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -562,7 +563,7 @@ Future<Response> verifyOTP (String email, String code) async{
         ),
       );
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -599,7 +600,7 @@ Future<Response> verifyOTP (String email, String code) async{
         ),
       );
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -639,7 +640,7 @@ Future<Response> verifyOTP (String email, String code) async{
         ),
       );
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }
@@ -678,7 +679,7 @@ Future<Response> verifyOTP (String email, String code) async{
         ),
       );
       return response;
-    } on DioError catch (err) {
+    } on DioException catch (err) {
       handleError(err);
       rethrow;
     }

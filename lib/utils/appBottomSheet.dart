@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bucx/utils/constants.dart';
 
 class AppBottomSheets extends StatelessWidget {
   final double initialSize;
@@ -9,13 +8,13 @@ class AppBottomSheets extends StatelessWidget {
   final VoidCallback? onInit;
 
   const AppBottomSheets({
-    Key? key,
+    super.key,
     required this.child,
     this.initialSize = 0.5,
     this.minSize = 0.25,
     this.maxSize = 0.85,
     this.onInit,
-  }) : super(key: key);
+  });
 
   static void showBottomSheet({
     required BuildContext context,
@@ -30,11 +29,11 @@ class AppBottomSheets extends StatelessWidget {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (_) => AppBottomSheets(
-        child: child,
         initialSize: initialSize,
         minSize: minSize,
         maxSize: maxSize,
         onInit: onInit,
+        child: child,
       ),
     );
   }

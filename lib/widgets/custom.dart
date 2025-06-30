@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../utils/constants.dart';
-import '../utils/pallet.dart';
 
 class ShowDialogWidget extends StatelessWidget {
   const ShowDialogWidget({
@@ -9,8 +8,8 @@ class ShowDialogWidget extends StatelessWidget {
     this.title,
     this.message,
     this.actions = const [],
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget? icon;
   final String? title;

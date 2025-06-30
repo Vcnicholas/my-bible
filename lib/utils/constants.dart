@@ -1,9 +1,10 @@
-import 'package:bucx/utils/pallet.dart';
+import 'package:bible/utils/pallet.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../data/services/navigation_service.dart';
 import '../data/services/storage-service.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
+////////////////////////////////////////////////import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../locator.dart';
 import 'font_manager.dart';
 
@@ -52,7 +53,7 @@ class AppText extends StatelessWidget {
   final TextAlign? align;
 
   const AppText(this.text,
-      {Key? key,
+      {super.key,
       this.color,
       this.overflow,
       this.size,
@@ -67,8 +68,7 @@ class AppText extends StatelessWidget {
       this.isHeader,
       this.isSubHeader,
       this.letterSpacing,
-      this.wordSpacing})
-      : super(key: key);
+      this.wordSpacing});
 
   @override
   Widget build(BuildContext context) {

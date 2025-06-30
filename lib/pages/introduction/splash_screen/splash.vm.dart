@@ -1,9 +1,7 @@
 
-import 'package:bucx/data/core/storage/get_boxes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get_storage/get_storage.dart';
-import '../../auth/sign_in/sign_in.dart';
-import '../../auth/sign_up/terms_of_service.dart';
+import '../../../data/core/storage/get_boxes.dart';
 import '../../base/base.vm.dart';
 import '../../home/dashboard/dashboard.dart';
 import '../onboarding/onboarding_view.dart';

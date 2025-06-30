@@ -1,3 +1,5 @@
+import 'package:bible/pages/introduction/splash_screen/splash_screen.dart';
+import 'package:bible/routes/routes.dart';
 import 'package:bible/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +12,6 @@ import 'locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  InAppWebViewController.setWebContentsDebuggingEnabled(true);
 
   //initialise local storage
   await GetStorage.init();
@@ -25,7 +26,7 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key,});
 
   @override
   State<MyApp> createState() => _MyAppState();

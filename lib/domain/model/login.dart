@@ -9,12 +9,12 @@ class LoginResponse {
     //status = json['status'];
     status = json['status'];
     email = json['email'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status'] = status;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -97,31 +97,31 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
-    data['email'] = this.email;
-    data['password'] = this.password;
-    data['fullname'] = this.fullname;
-    data['level'] = this.level;
-    data['isEmailVerified'] = this.isEmailVerified;
-    data['isSuspended'] = this.isSuspended;
-    data['isBanned'] = this.isBanned;
-    data['isVerified'] = this.isVerified;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['email'] = email;
+    data['password'] = password;
+    data['fullname'] = fullname;
+    data['level'] = level;
+    data['isEmailVerified'] = isEmailVerified;
+    data['isSuspended'] = isSuspended;
+    data['isBanned'] = isBanned;
+    data['isVerified'] = isVerified;
     // if (this.referralPath != null) {
     //   data['referralPath'] = this.referralPath!.map((v) => v.toJson()).toList();
     // }
-    data['referralCode'] = this.referralCode;
-    data['privateKey'] = this.privateKey;
-    data['depositWalletAddress'] = this.depositWalletAddress;
-    data['role'] = this.role;
+    data['referralCode'] = referralCode;
+    data['privateKey'] = privateKey;
+    data['depositWalletAddress'] = depositWalletAddress;
+    data['role'] = role;
     // if (this.withdrawalWallets != null) {
     //   data['withdrawalWallets'] =
     //       this.withdrawalWallets!.map((v) => v.toJson()).toList();
     // }
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
-    data['__v'] = this.iV;
-    data['token'] = this.token;
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    data['__v'] = iV;
+    data['token'] = token;
     return data;
   }
 }

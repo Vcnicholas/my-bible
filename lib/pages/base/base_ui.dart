@@ -15,7 +15,7 @@ class BaseView<T extends BaseViewModel> extends StatefulWidget {
   final Function(T)? onModelReady;
   final Function(T)? onModelDispose;
   final Color color;
-  const BaseView({Key? key, this.builder, this.onModelReady, this.color = AppColor.white, this.onModelDispose,this.notDefaultLoading=false}) : super(key: key);
+  const BaseView({super.key, this.builder, this.onModelReady, this.color = AppColor.white, this.onModelDispose,this.notDefaultLoading=false});
 
   @override
   _BaseViewState<T> createState() => _BaseViewState<T>();

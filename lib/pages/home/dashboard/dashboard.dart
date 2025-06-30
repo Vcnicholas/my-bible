@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../utils/app_images.dart';
 import '../../../utils/pallet.dart';
 import '../../../utils/widget_extensions.dart';
 import '../../base/base_ui.dart';
@@ -44,7 +43,7 @@ class _BottomNavState extends State<BottomNav> {
         },
         child: Scaffold(
           backgroundColor:AppColor.blacks,
-          body: Container(
+          body: SizedBox(
             width: width(context),
               height: height(context) / 0.4.sp,
               child:ValueListenableBuilder(

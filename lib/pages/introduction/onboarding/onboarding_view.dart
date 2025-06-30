@@ -1,17 +1,13 @@
-import 'package:bucx/pages/auth/sign_up/sign_up.vm.dart';
-import 'package:bucx/pages/introduction/onboarding/onboarding_vm.dart';
-import 'package:bucx/utils/app_buttons.dart';
-import 'package:bucx/utils/app_images.dart';
-import 'package:bucx/utils/app_strings.dart';
-import 'package:bucx/utils/constants.dart';
-import 'package:bucx/utils/widget_extensions.dart';
+import 'package:bible/utils/widget_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../utils/app_buttons.dart';
+import '../../../utils/app_images.dart';
+import '../../../utils/app_strings.dart';
+import '../../../utils/constants.dart';
 import '../../../utils/pallet.dart';
-import '../../auth/sign_in/sign_in.dart';
-import '../../auth/sign_up/let_us_know_you.dart';
-import '../../auth/sign_up/sign_up.dart';
 import '../../base/base_ui.dart';
+import 'onboarding_vm.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -61,12 +57,12 @@ class OnboardingView extends StatelessWidget {
                       ],),
                       20.sp.sbH,
                       AppButton(onPressed: (){
-                        navigationService.navigateToWidget(LetUsKnowYou());
+                     //   navigationService.navigateToWidget(LetUsKnowYou());
                       }, title: 'Continue with Google',
                       leadingIcon: AppImages.google,),
                       15.h.sbH,
                       AppButton(onPressed: (){
-                        navigationService.navigateToWidget(const SignUp());
+                       // navigationService.navigateToWidget(const SignUp());
                       }, title: 'Continue with Email',
                         leadingIcon: AppImages.email,
                         buttonTextColor: AppColor.black,

@@ -5,24 +5,24 @@ import '../../../utils/snack_message.dart';
 // This handles the errors in the app i made use of DioError
 void handleError(dynamic error) {
   var errorString = error.response.toString();
-  if (error is DioError) {
+  if (error is DioException) {
     switch (error.type) {
-      case DioErrorType.cancel:
+      case DioExceptionType.cancel:
       // showCustomToast("Request to API server was cancelled");
         break;
-      case DioErrorType.connectionTimeout:
+      case DioExceptionType.connectionTimeout:
       // showCustomToast("Connection timeout with API server");
         break;
-      case DioErrorType.unknown:
+      case DioExceptionType.unknown:
         snackBars("No internet Connection",false);
         break;
-      case DioErrorType.receiveTimeout:
+      case DioExceptionType.receiveTimeout:
       // showCustomToast("Receive timeout in connection with API server");
         break;
-      case DioErrorType.badResponse:
+      case DioExceptionType.badResponse:
         final errorMessage =  error.response?.data["message"];
         if(errorMessage!=null) {
-          print("TTT${errorMessage}");
+          print("TTT$errorMessage");
           if(errorMessage=="invalid token"){
             // navigationService.navigateToReplaceWidget(const SignIn());
             snackBars("$errorMessage please try login again",false);
@@ -35,7 +35,7 @@ void handleError(dynamic error) {
           snackBars(error.response?.data["errors"],false);
         }
         break;
-      case DioErrorType.sendTimeout:
+      case DioExceptionType.sendTimeout:
         snackBars("Send timeout in connection with API server",false);
         break;
       default:

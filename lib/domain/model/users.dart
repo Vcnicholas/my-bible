@@ -8,13 +8,13 @@ class UserResponse {
   UserResponse.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
-    data['message'] = this.message;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['status'] = status;
+    data['message'] = message;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -41,11 +41,11 @@ class Data {
   String? createdAt;
   String? updatedAt;
   int? iV;
-  Null? fifthUpLiner;
-  Null? firstUpLiner;
-  Null? fourthUpLiner;
-  Null? secondUpLiner;
-  Null? thirdUpLiner;
+  Null fifthUpLiner;
+  Null firstUpLiner;
+  Null fourthUpLiner;
+  Null secondUpLiner;
+  Null thirdUpLiner;
   int? unClaimedReferralEarnings;
   int? walletBalance;
   LevelAchievements? levelAchievements;
@@ -121,7 +121,7 @@ class Data {
     unClaimedReferralEarnings = json['unClaimedReferralEarnings'];
     walletBalance = json['walletBalance'];
     levelAchievements = json['levelAchievements'] != null
-        ? new LevelAchievements.fromJson(json['levelAchievements'])
+        ? LevelAchievements.fromJson(json['levelAchievements'])
         : null;
     mfaIsVerified = json['mfaIsVerified'];
     mfaIsSetup = json['mfaIsSetup'];
@@ -129,43 +129,43 @@ class Data {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['_id'] = this.sId;
-    data['email'] = this.email;
-    data['password'] = this.password;
-    data['fullname'] = this.fullname;
-    data['level'] = this.level;
-    data['isEmailVerified'] = this.isEmailVerified;
-    data['isSuspended'] = this.isSuspended;
-    data['isBanned'] = this.isBanned;
-    data['isVerified'] = this.isVerified;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['_id'] = sId;
+    data['email'] = email;
+    data['password'] = password;
+    data['fullname'] = fullname;
+    data['level'] = level;
+    data['isEmailVerified'] = isEmailVerified;
+    data['isSuspended'] = isSuspended;
+    data['isBanned'] = isBanned;
+    data['isVerified'] = isVerified;
     // if (this.referralPath != null) {
     //   data['referralPath'] = this.referralPath!.map((v) => v.toJson()).toList();
     // }
-    data['referralCode'] = this.referralCode;
-    data['privateKey'] = this.privateKey;
-    data['depositWalletAddress'] = this.depositWalletAddress;
-    data['role'] = this.role;
+    data['referralCode'] = referralCode;
+    data['privateKey'] = privateKey;
+    data['depositWalletAddress'] = depositWalletAddress;
+    data['role'] = role;
     // if (this.withdrawalWallets != null) {
     //   data['withdrawalWallets'] =
     //       this.withdrawalWallets!.map((v) => v.toJson()).toList();
     // }
-    data['createdAt'] = this.createdAt;
-    data['updatedAt'] = this.updatedAt;
-    data['__v'] = this.iV;
-    data['fifthUpLiner'] = this.fifthUpLiner;
-    data['firstUpLiner'] = this.firstUpLiner;
-    data['fourthUpLiner'] = this.fourthUpLiner;
-    data['secondUpLiner'] = this.secondUpLiner;
-    data['thirdUpLiner'] = this.thirdUpLiner;
-    data['unClaimedReferralEarnings'] = this.unClaimedReferralEarnings;
-    data['walletBalance'] = this.walletBalance;
-    if (this.levelAchievements != null) {
-      data['levelAchievements'] = this.levelAchievements!.toJson();
+    data['createdAt'] = createdAt;
+    data['updatedAt'] = updatedAt;
+    data['__v'] = iV;
+    data['fifthUpLiner'] = fifthUpLiner;
+    data['firstUpLiner'] = firstUpLiner;
+    data['fourthUpLiner'] = fourthUpLiner;
+    data['secondUpLiner'] = secondUpLiner;
+    data['thirdUpLiner'] = thirdUpLiner;
+    data['unClaimedReferralEarnings'] = unClaimedReferralEarnings;
+    data['walletBalance'] = walletBalance;
+    if (levelAchievements != null) {
+      data['levelAchievements'] = levelAchievements!.toJson();
     }
-    data['mfaIsVerified'] = this.mfaIsVerified;
-    data['mfaIsSetup'] = this.mfaIsSetup;
-    data['mfaIsEnabled'] = this.mfaIsEnabled;
+    data['mfaIsVerified'] = mfaIsVerified;
+    data['mfaIsSetup'] = mfaIsSetup;
+    data['mfaIsEnabled'] = mfaIsEnabled;
     return data;
   }
 }
@@ -188,40 +188,40 @@ class LevelAchievements {
 
   LevelAchievements.fromJson(Map<String, dynamic> json) {
     unranked = json['Unranked'] != null
-        ? new Unranked.fromJson(json['Unranked'])
+        ? Unranked.fromJson(json['Unranked'])
         : null;
     sergent =
-    json['Sergent'] != null ? new Unranked.fromJson(json['Sergent']) : null;
+    json['Sergent'] != null ? Unranked.fromJson(json['Sergent']) : null;
     commander = json['Commander'] != null
-        ? new Unranked.fromJson(json['Commander'])
+        ? Unranked.fromJson(json['Commander'])
         : null;
-    major = json['Major'] != null ? new Unranked.fromJson(json['Major']) : null;
+    major = json['Major'] != null ? Unranked.fromJson(json['Major']) : null;
     general =
-    json['General'] != null ? new Unranked.fromJson(json['General']) : null;
+    json['General'] != null ? Unranked.fromJson(json['General']) : null;
     globalAmbassador = json['Global Ambassador'] != null
-        ? new Unranked.fromJson(json['Global Ambassador'])
+        ? Unranked.fromJson(json['Global Ambassador'])
         : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.unranked != null) {
-      data['Unranked'] = this.unranked!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (unranked != null) {
+      data['Unranked'] = unranked!.toJson();
     }
-    if (this.sergent != null) {
-      data['Sergent'] = this.sergent!.toJson();
+    if (sergent != null) {
+      data['Sergent'] = sergent!.toJson();
     }
-    if (this.commander != null) {
-      data['Commander'] = this.commander!.toJson();
+    if (commander != null) {
+      data['Commander'] = commander!.toJson();
     }
-    if (this.major != null) {
-      data['Major'] = this.major!.toJson();
+    if (major != null) {
+      data['Major'] = major!.toJson();
     }
-    if (this.general != null) {
-      data['General'] = this.general!.toJson();
+    if (general != null) {
+      data['General'] = general!.toJson();
     }
-    if (this.globalAmbassador != null) {
-      data['Global Ambassador'] = this.globalAmbassador!.toJson();
+    if (globalAmbassador != null) {
+      data['Global Ambassador'] = globalAmbassador!.toJson();
     }
     return data;
   }
@@ -232,7 +232,7 @@ class Unranked {
   int? totalTeamDeposits;
   int? levelAchievmentCashPrize;
   int? teamAchievmentCashPrize;
-  Null? additionalPrize;
+  Null additionalPrize;
   bool? fulfilled;
 
   Unranked(
@@ -253,13 +253,13 @@ class Unranked {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['teamSize'] = this.teamSize;
-    data['totalTeamDeposits'] = this.totalTeamDeposits;
-    data['levelAchievmentCashPrize'] = this.levelAchievmentCashPrize;
-    data['teamAchievmentCashPrize'] = this.teamAchievmentCashPrize;
-    data['additionalPrize'] = this.additionalPrize;
-    data['fulfilled'] = this.fulfilled;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['teamSize'] = teamSize;
+    data['totalTeamDeposits'] = totalTeamDeposits;
+    data['levelAchievmentCashPrize'] = levelAchievmentCashPrize;
+    data['teamAchievmentCashPrize'] = teamAchievmentCashPrize;
+    data['additionalPrize'] = additionalPrize;
+    data['fulfilled'] = fulfilled;
     return data;
   }
 }
