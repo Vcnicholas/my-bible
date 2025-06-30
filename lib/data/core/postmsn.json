@@ -1,0 +1,3458 @@
+{
+  "item": [
+    {
+      "id": "2e258310-93a9-487d-9c0f-e271f9e49bda",
+      "name": "auth",
+      "item": [
+        {
+          "id": "345f2c59-79c8-4949-87cf-197d82436bd3",
+          "name": "User login",
+          "request": {
+            "name": "User login",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5200a0c5-978d-44ad-bea9-f7c18419c0e7",
+              "name": "Login success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Login successful\",\n  \"token\": \"jwt_token\",\n  \"user\": {\n    \"_id\": \"67a4d2cbfecd9d7e6dd915a4\",\n    \"email\": \"princewillasotibe124@gmail.com\",\n    \"firstname\": \"prince\",\n    \"lastname\": \"john\",\n    \"password\": \"$2a$12$YsbiakEvAO8vKO6Pe/aDee1mwTR2XDZv5prxOfGP6K4k29asJc5gq\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f1bcf54d-f07b-4c72-b9de-677b40e523e9",
+              "name": "Login failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Login failed\",\n  \"token\": \"jwt_token\",\n  \"user\": {\n    \"_id\": \"67a4d2cbfecd9d7e6dd915a4\",\n    \"email\": \"princewillasotibe124@gmail.com\",\n    \"firstname\": \"prince\",\n    \"lastname\": \"john\",\n    \"password\": \"$2a$12$YsbiakEvAO8vKO6Pe/aDee1mwTR2XDZv5prxOfGP6K4k29asJc5gq\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb1ac59d-0bde-4330-99fc-0c036959b440",
+          "name": "User new  email verfication",
+          "request": {
+            "name": "User new  email verfication",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "verify-unboarded-email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d7b435ea-15b8-4fea-bc4f-b2be9bcd191b",
+              "name": "Verification successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "verify-unboarded-email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Email verified successfully\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5dda3771-3e33-4d94-a4e7-f48a538537a9",
+              "name": "Verification failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "verify-unboarded-email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Failed to verify email\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "142ce4c1-f874-447b-9745-9fe4b0626f81",
+          "name": "User new  email verfication",
+          "request": {
+            "name": "User new  email verfication",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "verify-email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "66ceecc8-569e-426c-9ca6-8d3b99ece1d9",
+              "name": "Verification successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "verify-email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Email verified successfully\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aad9aedc-c6eb-4191-9679-6a1ac529a052",
+              "name": "Verification failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "verify-email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"Failed to verify email\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d51f96a1-0de4-4148-b5ac-ff35dc57c770",
+          "name": "User signup",
+          "request": {
+            "name": "User signup",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "thirdpartysignup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"token\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "69321ea7-ad80-4e11-86ed-96b715d53945",
+              "name": "signup success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "thirdpartysignup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"User authenticated\",\n  \"user\": {\n    \"_id\": \"67a4d2cbfecd9d7e6dd915a4\",\n    \"email\": \"princewillasotibe124@gmail.com\",\n    \"firstname\": \"prince\",\n    \"lastname\": \"john\",\n    \"password\": \"$2a$12$YsbiakEvAO8vKO6Pe/aDee1mwTR2XDZv5prxOfGP6K4k29asJc5gq\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d7f832ff-7888-4e2a-9733-4157f068ef28",
+              "name": "signup failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "thirdpartysignup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a39cfb9d-b472-4bf3-91a0-dee4f334cfa0",
+          "name": "User signup",
+          "request": {
+            "name": "User signup",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "thirdpartylogin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"token\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "51badbd0-d2b1-472d-af78-4f055bdfa482",
+              "name": "Login success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "thirdpartylogin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"User authenticated\",\n  \"user\": {\n    \"_id\": \"67a4d2cbfecd9d7e6dd915a4\",\n    \"email\": \"princewillasotibe124@gmail.com\",\n    \"firstname\": \"prince\",\n    \"lastname\": \"john\",\n    \"password\": \"$2a$12$YsbiakEvAO8vKO6Pe/aDee1mwTR2XDZv5prxOfGP6K4k29asJc5gq\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "595a160e-a0c9-496d-81de-6778eeb1adf0",
+              "name": "Login failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "thirdpartylogin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"token\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18d120c7-f9aa-4176-94db-2c3995541e61",
+          "name": "reset user password, an otp is sent to the user email",
+          "request": {
+            "name": "reset user password, an otp is sent to the user email",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "forgotpassword"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb453f6b-1e0e-42c4-a0b7-aee83dd8894f",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "forgotpassword"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"msg\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f421733b-6ba9-4f19-90b6-f68436b1851a",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "forgotpassword"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39a982c0-d325-4447-b958-f7d94b7d8ca7",
+          "name": "Reset Password",
+          "request": {
+            "name": "Reset Password",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "resetpassword"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"otp\": \"<string>\",\n  \"newPassword\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0525d58c-a12a-46ee-9384-c769bdc9b8a8",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "resetpassword"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"otp\": \"<string>\",\n  \"newPassword\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"msg\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92be1db3-aee1-413c-8576-813e57945525",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "resetpassword"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"otp\": \"<string>\",\n  \"newPassword\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d37b7cfb-8cea-4167-bb53-f3aac18f56f1",
+          "name": "Resend OTP",
+          "request": {
+            "name": "Resend OTP",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "resend-otp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "00549db0-4bc2-484c-81d2-375742aa9dc7",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "resend-otp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"msg\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a5260cba-acd8-44fd-83dd-5aea2bf59f0f",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "resend-otp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1cc6f263-18e1-4551-91b3-81345944ad0d",
+          "name": "Resend OTP",
+          "request": {
+            "name": "Resend OTP",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "sendUnboardedEmailOtp"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e3b604af-5228-4d34-b862-37bdd035c229",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "sendUnboardedEmailOtp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"msg\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "059dbf94-539c-45e7-a95c-550a0095240f",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "sendUnboardedEmailOtp"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e060541a-324c-4a48-b93a-41bdfd0ac6f6",
+          "name": "Get your KYC links",
+          "request": {
+            "name": "Get your KYC links",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "kyc-links"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idempotency_key\": \"<string>\",\n  \"type\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ac7ac741-af84-464c-bf52-2d79c522a404",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "kyc-links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idempotency_key\": \"<string>\",\n  \"type\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e8c00d78bb09801552d2fe\",\n  \"id\": \"ffb9007f-72bc-4526-85e2-cbf0a3814588\",\n  \"email\": \"princewillasotibe123@gmail.com\",\n  \"type\": \"individual\",\n  \"kyc_link\": \"https://bridge.withpersona.com/verify?inquiry-template-id=itmpl_NtHYpb9AbEYCPxGo5iRbc9d2&fields[developer_id]=8d2a801a-edaf-4d42-818d-16789c900bd5&fields[iqt_token]=46f7565fe2ba42843b957cec6d783e48f85dff6d6ea56cf5753634b09a3214e8WwzmNl&reference-id=e31d0a61-13f4-41ce-9262-5665eecb0212\",\n  \"tos_link\": \"https://dashboard.bridge.xyz/accept-terms-of-service?customer_id=e31d0a61-13f4-41ce-9262-5665eecb0212\",\n  \"kyc_status\": \"incomplete\",\n  \"tos_status\": \"pending\",\n  \"created_at\": {\n    \"$date\": \"2025-03-30T03:50:49.752Z\"\n  },\n  \"customer_id\": \"e31d0a61-13f4-41ce-9262-5665eecb0212\",\n  \"rejection_reasons\": [],\n  \"requirements_due\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "488e2cc7-5212-469b-9c2b-db92381d08e1",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "kyc-links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idempotency_key\": \"<string>\",\n  \"type\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33c216da-b2d4-4901-aa3b-e42c3166c474",
+          "name": "Get your KYC links",
+          "request": {
+            "name": "Get your KYC links",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "kyc-status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idempotency_key\": \"<string>\",\n  \"type\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ae927ede-c8d5-4789-8a69-f02a2fd60897",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "kyc-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idempotency_key\": \"<string>\",\n  \"type\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e8c00d78bb09801552d2fe\",\n  \"id\": \"ffb9007f-72bc-4526-85e2-cbf0a3814588\",\n  \"email\": \"princewillasotibe123@gmail.com\",\n  \"type\": \"individual\",\n  \"kyc_link\": \"https://bridge.withpersona.com/verify?inquiry-template-id=itmpl_NtHYpb9AbEYCPxGo5iRbc9d2&fields[developer_id]=8d2a801a-edaf-4d42-818d-16789c900bd5&fields[iqt_token]=46f7565fe2ba42843b957cec6d783e48f85dff6d6ea56cf5753634b09a3214e8WwzmNl&reference-id=e31d0a61-13f4-41ce-9262-5665eecb0212\",\n  \"tos_link\": \"https://dashboard.bridge.xyz/accept-terms-of-service?customer_id=e31d0a61-13f4-41ce-9262-5665eecb0212\",\n  \"kyc_status\": \"incomplete\",\n  \"tos_status\": \"pending\",\n  \"created_at\": {\n    \"$date\": \"2025-03-30T03:50:49.752Z\"\n  },\n  \"customer_id\": \"e31d0a61-13f4-41ce-9262-5665eecb0212\",\n  \"rejection_reasons\": [],\n  \"requirements_due\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb83e178-049a-4c00-ad23-ff64247e15d2",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "kyc-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idempotency_key\": \"<string>\",\n  \"type\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58ba99ee-80ee-4862-acb7-3b73894906da",
+          "name": "Update user bio data",
+          "request": {
+            "name": "Update user bio data",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "update-user-biodata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"type\": \"<string>\",\n  \"email\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"accountType\": \"anim\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b01d783a-5599-4f06-a605-70722ac02a18",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "update-user-biodata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"type\": \"<string>\",\n  \"email\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"accountType\": -73244944.01862785\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67a4d2cbfecd9d7e6dd915a4\",\n  \"email\": \"princewillasotibe124@gmail.com\",\n  \"firstname\": \"prince\",\n  \"lastname\": \"john\",\n  \"password\": \"$2a$12$YsbiakEvAO8vKO6Pe/aDee1mwTR2XDZv5prxOfGP6K4k29asJc5gq\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52ee9e98-f2e9-4ef3-bc5c-911749967f0b",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "update-user-biodata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"type\": \"<string>\",\n  \"email\": \"<string>\",\n  \"country\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"accountType\": -73244944.01862785\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fd43e543-687f-47bd-911a-24f316d3b3dd",
+          "name": "Update user bio data",
+          "request": {
+            "name": "Update user bio data",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "verify-access-code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"code\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26d21501-ec51-48c0-bbee-f7d6ece16260",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "verify-access-code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3833ff2d-8a7f-41b4-ae51-94db1191a8e6",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "verify-access-code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"code\": \"<string>\",\n  \"email\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "356aa80b-5cb3-45b7-bf0e-1e926bac99f2",
+          "name": "Update user bio data",
+          "request": {
+            "name": "Update user bio data",
+            "description": {},
+            "url": {
+              "path": [
+                "auth",
+                "store-password"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accessCode\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99258e7e-a0cc-46d2-9376-0dcbf3ab4545",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "store-password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accessCode\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f73f2ffc-6eda-4a32-a585-61eab6b9fb07",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "store-password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accessCode\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "4815fe7d-c2be-48af-8561-48ca70277d46",
+      "name": "wallet",
+      "item": [
+        {
+          "id": "91f4bab1-0392-4675-9be1-12ccc2d61566",
+          "name": "get wallet",
+          "request": {
+            "name": "get wallet",
+            "description": {},
+            "url": {
+              "path": [
+                "wallet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {}
+          },
+          "response": [
+            {
+              "id": "d63e5975-1755-45c9-bef2-fcfa4ca65082",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e8fd04e0b9afe4bde5c358\",\n  \"user\": \"67e881c6e0b9afe4bde5c352\",\n  \"createdAt\": \"2025-03-30T08:12:51.681Z\",\n  \"solWallet\": {\n    \"_id\": \"67e8fd04e0b9afe4bde5c357\",\n    \"id\": \"bab579ff-7af2-40ea-a712-d3de4c3e6952\",\n    \"createdAt\": \"2025-03-30T08:12:51.563Z\",\n    \"updatedAt\": \"2025-03-30T08:41:44.496Z\",\n    \"address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"updatedAt\": \"2025-03-31T21:42:29.390Z\",\n  \"usdWallet\": {\n    \"_id\": \"67eb0c43a0022461df1818df\",\n    \"id\": \"df269917-2229-4c7f-9199-9e20525b7953\",\n    \"user\": \"67e881c6e0b9afe4bde5c352\",\n    \"status\": \"activated\",\n    \"customer_id\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n    \"source_deposit_instructions\": {\n      \"currency\": \"usd\",\n      \"bank_beneficiary_name\": \"EMMANUEL JACKSON\",\n      \"bank_name\": \"Lead Bank\",\n      \"bank_address\": \"1801 Main St., Kansas City, MO 64108\",\n      \"bank_routing_number\": \"101019644\",\n      \"bank_account_number\": \"218635686425\",\n      \"payment_rails\": [\n        \"ach_push\",\n        \"wire\"\n      ],\n      \"payment_rail\": \"ach_push\"\n    },\n    \"destination\": {\n      \"currency\": \"usdc\",\n      \"payment_rail\": \"solana\",\n      \"address\": \"VWuAwTF2BN2rBSJqNRbKDP2z62vUcjQQfiNZcv649hG\"\n    },\n    \"developer_fee_percent\": \"1.0\",\n    \"createdAt\": \"2025-03-31T21:42:27.087Z\",\n    \"updatedAt\": \"2025-03-31T21:42:27.087Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5faed868-a689-4756-9253-8db8baa3c577",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db4fc541-dd74-4487-860e-43828857c89d",
+          "name": "create wallet",
+          "request": {
+            "name": "create wallet",
+            "description": {},
+            "url": {
+              "path": [
+                "wallet"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5b56334d-ab75-4bd6-ac38-49e17f608dc7",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e8fd04e0b9afe4bde5c358\",\n  \"user\": \"67e881c6e0b9afe4bde5c352\",\n  \"createdAt\": \"2025-03-30T08:12:51.681Z\",\n  \"solWallet\": {\n    \"_id\": \"67e8fd04e0b9afe4bde5c357\",\n    \"id\": \"bab579ff-7af2-40ea-a712-d3de4c3e6952\",\n    \"createdAt\": \"2025-03-30T08:12:51.563Z\",\n    \"updatedAt\": \"2025-03-30T08:41:44.496Z\",\n    \"address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"updatedAt\": \"2025-03-31T21:42:29.390Z\",\n  \"usdWallet\": {\n    \"_id\": \"67eb0c43a0022461df1818df\",\n    \"id\": \"df269917-2229-4c7f-9199-9e20525b7953\",\n    \"user\": \"67e881c6e0b9afe4bde5c352\",\n    \"status\": \"activated\",\n    \"customer_id\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n    \"source_deposit_instructions\": {\n      \"currency\": \"usd\",\n      \"bank_beneficiary_name\": \"EMMANUEL JACKSON\",\n      \"bank_name\": \"Lead Bank\",\n      \"bank_address\": \"1801 Main St., Kansas City, MO 64108\",\n      \"bank_routing_number\": \"101019644\",\n      \"bank_account_number\": \"218635686425\",\n      \"payment_rails\": [\n        \"ach_push\",\n        \"wire\"\n      ],\n      \"payment_rail\": \"ach_push\"\n    },\n    \"destination\": {\n      \"currency\": \"usdc\",\n      \"payment_rail\": \"solana\",\n      \"address\": \"VWuAwTF2BN2rBSJqNRbKDP2z62vUcjQQfiNZcv649hG\"\n    },\n    \"developer_fee_percent\": \"1.0\",\n    \"createdAt\": \"2025-03-31T21:42:27.087Z\",\n    \"updatedAt\": \"2025-03-31T21:42:27.087Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "86c28c1b-1590-4563-800b-8d1e9edd272f",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc68ede0-7c4c-4a58-897c-600842c5a054",
+          "name": "get wallet with email",
+          "request": {
+            "name": "get wallet with email",
+            "description": {},
+            "url": {
+              "path": [
+                "wallet",
+                "email"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "(Required) User email to retrieve KYC links"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f1e1b13a-09b5-45aa-b09b-5fb417da2441",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet",
+                    "email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e8fd04e0b9afe4bde5c358\",\n  \"user\": \"67e881c6e0b9afe4bde5c352\",\n  \"createdAt\": \"2025-03-30T08:12:51.681Z\",\n  \"solWallet\": {\n    \"_id\": \"67e8fd04e0b9afe4bde5c357\",\n    \"id\": \"bab579ff-7af2-40ea-a712-d3de4c3e6952\",\n    \"createdAt\": \"2025-03-30T08:12:51.563Z\",\n    \"updatedAt\": \"2025-03-30T08:41:44.496Z\",\n    \"address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"updatedAt\": \"2025-03-31T21:42:29.390Z\",\n  \"usdWallet\": {\n    \"_id\": \"67eb0c43a0022461df1818df\",\n    \"id\": \"df269917-2229-4c7f-9199-9e20525b7953\",\n    \"user\": \"67e881c6e0b9afe4bde5c352\",\n    \"status\": \"activated\",\n    \"customer_id\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n    \"source_deposit_instructions\": {\n      \"currency\": \"usd\",\n      \"bank_beneficiary_name\": \"EMMANUEL JACKSON\",\n      \"bank_name\": \"Lead Bank\",\n      \"bank_address\": \"1801 Main St., Kansas City, MO 64108\",\n      \"bank_routing_number\": \"101019644\",\n      \"bank_account_number\": \"218635686425\",\n      \"payment_rails\": [\n        \"ach_push\",\n        \"wire\"\n      ],\n      \"payment_rail\": \"ach_push\"\n    },\n    \"destination\": {\n      \"currency\": \"usdc\",\n      \"payment_rail\": \"solana\",\n      \"address\": \"VWuAwTF2BN2rBSJqNRbKDP2z62vUcjQQfiNZcv649hG\"\n    },\n    \"developer_fee_percent\": \"1.0\",\n    \"createdAt\": \"2025-03-31T21:42:27.087Z\",\n    \"updatedAt\": \"2025-03-31T21:42:27.087Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9bd4c95a-7acc-43e7-a102-2f6c5cc2dcaf",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet",
+                    "email"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e06dab5-003d-40a0-961a-481e96f2ae06",
+          "name": "usd-virtual-account",
+          "item": [
+            {
+              "id": "8f1af12f-9146-4322-ba0e-bf39b3b74d27",
+              "name": "create a usd virtual account",
+              "request": {
+                "name": "create a usd virtual account",
+                "description": {},
+                "url": {
+                  "path": [
+                    "wallet",
+                    "usd-virtual-account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "18c9dd7b-db7b-4d1c-b0ef-712dc8a91dbc",
+                  "name": "request successfull",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "wallet",
+                        "usd-virtual-account"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"_id\": \"67e8fd04e0b9afe4bde5c358\",\n  \"user\": \"67e881c6e0b9afe4bde5c352\",\n  \"createdAt\": \"2025-03-30T08:12:51.681Z\",\n  \"solWallet\": {\n    \"_id\": \"67e8fd04e0b9afe4bde5c357\",\n    \"id\": \"bab579ff-7af2-40ea-a712-d3de4c3e6952\",\n    \"createdAt\": \"2025-03-30T08:12:51.563Z\",\n    \"updatedAt\": \"2025-03-30T08:41:44.496Z\",\n    \"address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"updatedAt\": \"2025-03-31T21:42:29.390Z\",\n  \"usdWallet\": {\n    \"_id\": \"67eb0c43a0022461df1818df\",\n    \"id\": \"df269917-2229-4c7f-9199-9e20525b7953\",\n    \"user\": \"67e881c6e0b9afe4bde5c352\",\n    \"status\": \"activated\",\n    \"customer_id\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n    \"source_deposit_instructions\": {\n      \"currency\": \"usd\",\n      \"bank_beneficiary_name\": \"EMMANUEL JACKSON\",\n      \"bank_name\": \"Lead Bank\",\n      \"bank_address\": \"1801 Main St., Kansas City, MO 64108\",\n      \"bank_routing_number\": \"101019644\",\n      \"bank_account_number\": \"218635686425\",\n      \"payment_rails\": [\n        \"ach_push\",\n        \"wire\"\n      ],\n      \"payment_rail\": \"ach_push\"\n    },\n    \"destination\": {\n      \"currency\": \"usdc\",\n      \"payment_rail\": \"solana\",\n      \"address\": \"VWuAwTF2BN2rBSJqNRbKDP2z62vUcjQQfiNZcv649hG\"\n    },\n    \"developer_fee_percent\": \"1.0\",\n    \"createdAt\": \"2025-03-31T21:42:27.087Z\",\n    \"updatedAt\": \"2025-03-31T21:42:27.087Z\"\n  }\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                },
+                {
+                  "id": "c056a866-ddbe-4f53-9662-8f0b5f948608",
+                  "name": "request failed",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "wallet",
+                        "usd-virtual-account"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "POST",
+                    "body": {}
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"message\": \"An Error Occured\"\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            },
+            {
+              "id": "cd0fd88e-b5d4-48d3-b474-8b5cd90fd7d5",
+              "name": "update a usd virtual account",
+              "request": {
+                "name": "update a usd virtual account",
+                "description": {},
+                "url": {
+                  "path": [
+                    "wallet",
+                    "usd-virtual-account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{bearerToken}}"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "4cbe33f8-b620-425c-93a9-02b883c54425",
+                  "name": "request successfull",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "wallet",
+                        "usd-virtual-account"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "PUT",
+                    "body": {}
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"_id\": \"67e8fd04e0b9afe4bde5c358\",\n  \"user\": \"67e881c6e0b9afe4bde5c352\",\n  \"createdAt\": \"2025-03-30T08:12:51.681Z\",\n  \"solWallet\": {\n    \"_id\": \"67e8fd04e0b9afe4bde5c357\",\n    \"id\": \"bab579ff-7af2-40ea-a712-d3de4c3e6952\",\n    \"createdAt\": \"2025-03-30T08:12:51.563Z\",\n    \"updatedAt\": \"2025-03-30T08:41:44.496Z\",\n    \"address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"updatedAt\": \"2025-03-31T21:42:29.390Z\",\n  \"usdWallet\": {\n    \"_id\": \"67eb0c43a0022461df1818df\",\n    \"id\": \"df269917-2229-4c7f-9199-9e20525b7953\",\n    \"user\": \"67e881c6e0b9afe4bde5c352\",\n    \"status\": \"activated\",\n    \"customer_id\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n    \"source_deposit_instructions\": {\n      \"currency\": \"usd\",\n      \"bank_beneficiary_name\": \"EMMANUEL JACKSON\",\n      \"bank_name\": \"Lead Bank\",\n      \"bank_address\": \"1801 Main St., Kansas City, MO 64108\",\n      \"bank_routing_number\": \"101019644\",\n      \"bank_account_number\": \"218635686425\",\n      \"payment_rails\": [\n        \"ach_push\",\n        \"wire\"\n      ],\n      \"payment_rail\": \"ach_push\"\n    },\n    \"destination\": {\n      \"currency\": \"usdc\",\n      \"payment_rail\": \"solana\",\n      \"address\": \"VWuAwTF2BN2rBSJqNRbKDP2z62vUcjQQfiNZcv649hG\"\n    },\n    \"developer_fee_percent\": \"1.0\",\n    \"createdAt\": \"2025-03-31T21:42:27.087Z\",\n    \"updatedAt\": \"2025-03-31T21:42:27.087Z\"\n  }\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                },
+                {
+                  "id": "296bf66f-b4e8-4adc-8268-19cf073b4c55",
+                  "name": "request failed",
+                  "originalRequest": {
+                    "url": {
+                      "path": [
+                        "wallet",
+                        "usd-virtual-account"
+                      ],
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [
+                      {
+                        "description": {
+                          "content": "Added as a part of security scheme: bearer",
+                          "type": "text/plain"
+                        },
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "PUT",
+                    "body": {}
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "body": "{\n  \"message\": \"An Error Occured\"\n}",
+                  "cookie": [],
+                  "_postman_previewlanguage": "json"
+                }
+              ],
+              "event": [],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              }
+            }
+          ],
+          "event": []
+        },
+        {
+          "id": "98f4c04e-3206-4142-827f-3b7049062106",
+          "name": "get wallet balance",
+          "request": {
+            "name": "get wallet balance",
+            "description": {},
+            "url": {
+              "path": [
+                "wallet",
+                "balance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ec7f219f-2ee5-46ac-9dab-e4e244354ec7",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet",
+                    "balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"balance\": \"number\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fdaebf1e-0d45-434b-b3b0-3e49909b2cc1",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "wallet",
+                    "balance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"An Error Occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "38efedf8-755c-4ad1-a07b-ef7336427d0f",
+      "name": "transfer",
+      "item": [
+        {
+          "id": "55db9563-ac60-4e9f-a8b8-5b84ce7d6b9b",
+          "name": "initiate a transfer",
+          "request": {
+            "name": "initiate a transfer",
+            "description": {},
+            "url": {
+              "path": [
+                "transfer",
+                "initiatetransfer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "457ba4ef-a374-4858-a14c-225195b82b46",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transfer",
+                    "initiatetransfer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e93b54dbef35f44a48d3f2\",\n  \"nickname\": \"CryptoBob\",\n  \"state\": \"awaiting_funds\",\n  \"client_reference_id\": null,\n  \"on_behalf_of\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n  \"amount\": \"1.0\",\n  \"developer_fee\": \"0.0\",\n  \"source_deposit_instructions\": {\n    \"payment_rail\": \"solana\",\n    \"amount\": \"1.0\",\n    \"currency\": \"usdc\"\n  },\n  \"source\": {\n    \"payment_rail\": \"solana\",\n    \"currency\": \"usdc\",\n    \"external_account_id\": null\n  },\n  \"destination\": {\n    \"payment_rail\": \"solana\",\n    \"currency\": \"usdc\",\n    \"to_address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"receipt\": {\n    \"initial_amount\": \"1.0\",\n    \"developer_fee\": \"0.0\",\n    \"exchange_fee\": \"0.0\",\n    \"subtotal_amount\": \"1.0\",\n    \"final_amount\": \"1.0\"\n  },\n  \"createdAt\": \"2025-03-30T12:38:44.480Z\",\n  \"updatedAt\": \"2025-03-30T12:38:44.480Z\",\n  \"__v\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a3932028-8dfe-4248-bdca-72117d9a1000",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transfer",
+                    "initiatetransfer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"an error occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f34b8544-8e52-4acb-aec3-bb024325267a",
+          "name": "getting transfers",
+          "request": {
+            "name": "getting transfers",
+            "description": {},
+            "url": {
+              "path": [
+                "transfer",
+                "gettransfers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "97c079a1-9f73-4db0-ba61-c3fcbd26e637",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transfer",
+                    "gettransfers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e93b54dbef35f44a48d3f2\",\n  \"nickname\": \"CryptoBob\",\n  \"state\": \"awaiting_funds\",\n  \"client_reference_id\": null,\n  \"on_behalf_of\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n  \"amount\": \"1.0\",\n  \"developer_fee\": \"0.0\",\n  \"source_deposit_instructions\": {\n    \"payment_rail\": \"solana\",\n    \"amount\": \"1.0\",\n    \"currency\": \"usdc\"\n  },\n  \"source\": {\n    \"payment_rail\": \"solana\",\n    \"currency\": \"usdc\",\n    \"external_account_id\": null\n  },\n  \"destination\": {\n    \"payment_rail\": \"solana\",\n    \"currency\": \"usdc\",\n    \"to_address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"receipt\": {\n    \"initial_amount\": \"1.0\",\n    \"developer_fee\": \"0.0\",\n    \"exchange_fee\": \"0.0\",\n    \"subtotal_amount\": \"1.0\",\n    \"final_amount\": \"1.0\"\n  },\n  \"createdAt\": \"2025-03-30T12:38:44.480Z\",\n  \"updatedAt\": \"2025-03-30T12:38:44.480Z\",\n  \"__v\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4702f025-2fe0-4d2e-a032-c0c385b9798d",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transfer",
+                    "gettransfers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"an error occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0dc10e27-27b5-4635-9f6f-dba52437ced2",
+          "name": "getting a transfer",
+          "request": {
+            "name": "getting a transfer",
+            "description": {},
+            "url": {
+              "path": [
+                "transfer",
+                "gettransfer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb3375c8-5211-4115-962c-110ddb54444b",
+              "name": "request successfull",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transfer",
+                    "gettransfer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_id\": \"67e93b54dbef35f44a48d3f2\",\n  \"nickname\": \"CryptoBob\",\n  \"state\": \"awaiting_funds\",\n  \"client_reference_id\": null,\n  \"on_behalf_of\": \"f5ef36de-d992-49f9-a520-359bf2080e86\",\n  \"amount\": \"1.0\",\n  \"developer_fee\": \"0.0\",\n  \"source_deposit_instructions\": {\n    \"payment_rail\": \"solana\",\n    \"amount\": \"1.0\",\n    \"currency\": \"usdc\"\n  },\n  \"source\": {\n    \"payment_rail\": \"solana\",\n    \"currency\": \"usdc\",\n    \"external_account_id\": null\n  },\n  \"destination\": {\n    \"payment_rail\": \"solana\",\n    \"currency\": \"usdc\",\n    \"to_address\": \"6fk9GBUCB7wCwBkQjBNGky3CV783ERPJc7YW6sRLDPQR\"\n  },\n  \"receipt\": {\n    \"initial_amount\": \"1.0\",\n    \"developer_fee\": \"0.0\",\n    \"exchange_fee\": \"0.0\",\n    \"subtotal_amount\": \"1.0\",\n    \"final_amount\": \"1.0\"\n  },\n  \"createdAt\": \"2025-03-30T12:38:44.480Z\",\n  \"updatedAt\": \"2025-03-30T12:38:44.480Z\",\n  \"__v\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6d765b4e-cf5f-45c5-ac65-01cae46e82b9",
+              "name": "request failed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "transfer",
+                    "gettransfer"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"receiver\": {\n      \"email\": \"<string>\",\n      \"currency\": \"<string>\",\n      \"nickname\": \"<string>\"\n    },\n    \"sender\": {\n      \"currency\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  },\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"message\": \"an error occured\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3000",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a8401279-50f4-4fc5-a370-4cabaf4cdcc8",
+    "name": "LocateApp API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API documentation for LocateApp",
+      "type": "text/plain"
+    }
+  }
+}
