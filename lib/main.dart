@@ -50,10 +50,6 @@ class _MyAppState extends State<MyApp> {
             onGenerateRoute: AppRouter.generateRoute,
              //home:  CustomCheckboxDemo(),
              home: const SplashScreen(),
-              // home: const BottomNav(selectedIndex: 0,),
-            //home:   TransactionBreakdown(),
-            //home: Demo(),
-            //home: const BottomNav(selectedIndex: 0,),
           );
         },
       ),

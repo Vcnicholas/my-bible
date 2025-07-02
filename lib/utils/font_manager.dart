@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FontConstants {
-  static const String fontFamily = "OverusedGrotesk"; // TODO: Add font family here
+  static const String fontFamily = "OverusedGrotesk";
 }
-
 
 class FontWeightManager {
   static const FontWeight light = FontWeight.w300;
@@ -16,13 +16,13 @@ class FontWeightManager {
 }
 
 class FontSize {
-  static const double s12 = 12.0;
-  static const double s14 = 14.0;
-  static const double s16 = 16.0;
-  static const double s17 = 17.0;
-  static const double s18 = 18.0;
-  static const double s20 = 20.0;
-  static const double s24 = 24.0;
-  static const double s30 = 30.0;
-  static const double s34 = 34.0;
+  static double s12 = 12.sp;
+  static double s14 = 14.sp;
+  static double s16 = 16.sp;
+  static double s17 = 17.sp;
+  static double s18 = 18.sp;
+  static double s20 = 20.sp;
+  static double s24 = 24.sp;
+  static double s30 = 30.sp;
+  static double s34 = 34.sp;
 }

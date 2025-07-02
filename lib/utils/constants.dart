@@ -2,9 +2,10 @@ import 'package:bible/utils/pallet.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../data/services/navigation_service.dart';
 import '../data/services/storage-service.dart';
-////////////////////////////////////////////////import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../locator.dart';
 import 'font_manager.dart';
 
@@ -75,24 +76,30 @@ class AppText extends StatelessWidget {
     return Text(
       text,
       style: style ??
-          TextStyle(
-            color: isHeader == true
-                ? const Color(0xFF585858)
-                : isSubHeader == true
-                    ? const Color(0xFF999999)
-                    : color?? AppColor.textColor,
-            fontSize: size ?? 14.sp,
-            fontFamily: family ?? FontConstants.fontFamily,
-            height: height,
-            wordSpacing: wordSpacing,
-            letterSpacing: letterSpacing,
+          GoogleFonts.merienda(
+            color: color,
+            fontSize: size,
             fontWeight: weight ??
-                (isBold == true
-                    ? FontWeight.w700
-                    : isSubHeader == true
-                        ? FontWeight.w500
-                        : FontWeight.w500),
+                (isBold == true? FontWeight.w700: FontWeight.w500)
           ),
+          // TextStyle(
+          //   color: isHeader == true
+          //       ? const Color(0xFF585858)
+          //       : isSubHeader == true
+          //           ? const Color(0xFF999999)
+          //           : color?? AppColor.textColor,
+          //   fontSize: size ?? 14.sp,
+          //   fontFamily: family ?? FontConstants.fontFamily,
+          //   height: height,
+          //   wordSpacing: wordSpacing,
+          //   letterSpacing: letterSpacing,
+          //   fontWeight: weight ??
+          //       (isBold == true
+          //           ? FontWeight.w700
+          //           : isSubHeader == true
+          //               ? FontWeight.w500
+          //               : FontWeight.w500),
+          // ),
       textAlign: align ?? TextAlign.start,
       selectionColor: AppColor.warningColor.withOpacity(0.5),
       maxLines: maxLine,

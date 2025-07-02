@@ -1,3 +1,4 @@
+import 'package:bible/pages/home/dashboard/dashboard.dart';
 import 'package:bible/utils/widget_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +37,7 @@ class OnboardingView extends StatelessWidget {
                     children: [
                     CircleAvatar(radius: 150.sp,
                     backgroundColor: AppColor.white,
-                    backgroundImage: AssetImage(AppImages.onboarding,
+                    backgroundImage: AssetImage(AppImages.bible,
                     ),
                    ),
                     100.h.sbH,
@@ -57,16 +58,9 @@ class OnboardingView extends StatelessWidget {
                       ],),
                       20.sp.sbH,
                       AppButton(onPressed: (){
-                     //   navigationService.navigateToWidget(LetUsKnowYou());
-                      }, title: 'Continue with Google',
-                      leadingIcon: AppImages.google,),
+                        navigationService.navigateToWidget(BottomNav(selectedIndex: 0));
+                      }, title: 'Continue'),
                       15.h.sbH,
-                      AppButton(onPressed: (){
-                       // navigationService.navigateToWidget(const SignUp());
-                      }, title: 'Continue with Email',
-                        leadingIcon: AppImages.email,
-                        buttonTextColor: AppColor.black,
-                      buttonType: ButtonType.outline,)
                   ],),
                 ))
               ],

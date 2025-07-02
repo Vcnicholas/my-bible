@@ -78,8 +78,8 @@ class BottomNavBarState extends State<BottomNavBar> {
                             ),
                           ),
                           NavigationBarItem(
-                            label: "Cards",
-                            icon: Image.asset(AppIcons.card,
+                            label: "Bible",
+                            icon: Image.asset(AppIcons.bible,
                                 height: 24.sp,
                                 color: widget.selectedIndex == 1
                                     ? AppColor.primary
@@ -89,8 +89,8 @@ class BottomNavBarState extends State<BottomNavBar> {
                             onTap: handleItemSelected,
                           ),
                           NavigationBarItem(
-                            label: "Account",
-                            icon: Image.asset(AppIcons.account,
+                            label: "Hymns",
+                            icon: Image.asset(AppIcons.hymns,
                                 height:24.sp,
                                 color: widget.selectedIndex == 2
                                     ? AppColor.primary
@@ -100,7 +100,7 @@ class BottomNavBarState extends State<BottomNavBar> {
                             onTap: handleItemSelected,
                           ),
                           NavigationBarItem(
-                            label: "Profile",
+                            label: "More",
                             icon: Image.asset(AppIcons.profile,
                                 height: 24.sp,
                               color: widget.selectedIndex == 3

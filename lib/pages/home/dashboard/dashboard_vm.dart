@@ -13,7 +13,9 @@ class BottomNavViewModel extends BaseViewModel {
 
   List<Widget> children = [
     Home(),
-    const Profiles(),
+    Home(),
+    Home(),
+    Home(),
   ];
 
   //Pops the app back
