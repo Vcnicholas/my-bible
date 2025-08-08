@@ -1,6 +1,9 @@
+import 'package:bible/data/services/theme_service.dart';
 import 'package:bible/pages/base/base.vm.dart';
+import 'package:bible/pages/home/bible/bible_vm.dart';
 import 'package:bible/pages/home/dashboard/dashboard_vm.dart';
 import 'package:bible/pages/home/home_vm.dart';
+import 'package:bible/pages/home/hymns/hymns_vm.dart';
 import 'package:bible/pages/introduction/onboarding/onboarding_vm.dart';
 import 'package:bible/pages/introduction/splash_screen/splash.vm.dart';
 import 'package:dio/dio.dart';
@@ -52,14 +55,14 @@ void registerViewModel() {
   getIt.registerFactory<SplashViewModel>(() => SplashViewModel());
   // getIt.registerFactory<SignUpViewModel>(() => SignUpViewModel());
   // getIt.registerFactory<SignInViewModel>(() => SignInViewModel());
-  // //getIt.registerFactory<SecureAccountViewModel>(() => SecureAccountViewModel());
+  getIt.registerFactory<AppThemeModel>(() => AppThemeModel());
    getIt.registerFactory<OnboardingViewModel>(() => OnboardingViewModel());
   // getIt.registerFactory<ForgotPasswordViewModel>(() => ForgotPasswordViewModel());
-  // getIt.registerFactory<CardsViewModel>(()=> CardsViewModel());
-  // getIt.registerFactory<ProfilesViewModel>(() => ProfilesViewModel());
+   getIt.registerFactory<BibleViewModel>(()=> BibleViewModel());
+   //getIt.registerFactory<ProfilesViewModel>(() => ProfilesViewModel());
    getIt.registerFactory<HomeViewModel>(() => HomeViewModel());
    getIt.registerFactory<BottomNavViewModel>(() => BottomNavViewModel());
-  // getIt.registerFactory<SendMoneyViewModel>(() => SendMoneyViewModel());
+   getIt.registerFactory<HymnsViewModel>(() => HymnsViewModel());
   // getIt.registerFactory<SendToUSViewModel>(() => SendToUSViewModel());
   // getIt.registerFactory<AccountsViewModel>(() =>AccountsViewModel());
   // getIt.registerFactory<AddMoneyViewModel>(() => AddMoneyViewModel());

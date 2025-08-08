@@ -1,4 +1,5 @@
 import 'package:bible/pages/home/dashboard/dashboard.dart';
+import 'package:bible/pages/introduction/welcome/welcome.dart';
 import 'package:bible/utils/widget_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +59,7 @@ class OnboardingView extends StatelessWidget {
                       ],),
                       20.sp.sbH,
                       AppButton(onPressed: (){
-                        navigationService.navigateToWidget(BottomNav(selectedIndex: 0));
+                        navigationService.navigateToWidget(Welcome());
                       }, title: 'Continue'),
                       15.h.sbH,
                   ],),

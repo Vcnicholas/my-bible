@@ -1,3 +1,4 @@
+import 'package:bible/pages/home/bible/books.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
@@ -13,7 +14,7 @@ class BottomNavViewModel extends BaseViewModel {
 
   List<Widget> children = [
     Home(),
-    Home(),
+    Books(),
     Home(),
     Home(),
   ];

@@ -1,3 +1,4 @@
+import 'package:bible/data/services/theme_service.dart';
 import 'package:bible/utils/pallet.dart';
 
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ import 'font_manager.dart';
 
 final StorageService storageService = getIt<StorageService>();
 final NavigationService navigationService = getIt<NavigationService>();
+final AppThemeModel themeModel = getIt<AppThemeModel>();
 
 List<T> map<T>(List list, Function handler) {
   List<T> result = [];
@@ -77,8 +79,8 @@ class AppText extends StatelessWidget {
       text,
       style: style ??
           GoogleFonts.merienda(
-            color: color,
-            fontSize: size,
+            color: color ?? AppColor.black,
+            fontSize: size ?? 14.sp,
             fontWeight: weight ??
                 (isBold == true? FontWeight.w700: FontWeight.w500)
           ),

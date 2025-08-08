@@ -79,7 +79,7 @@ class BottomNavBarState extends State<BottomNavBar> {
                           ),
                           NavigationBarItem(
                             label: "Bible",
-                            icon: Image.asset(AppIcons.bible,
+                            icon: Image.asset(AppIcons.hymns,
                                 height: 24.sp,
                                 color: widget.selectedIndex == 1
                                     ? AppColor.primary
@@ -101,7 +101,7 @@ class BottomNavBarState extends State<BottomNavBar> {
                           ),
                           NavigationBarItem(
                             label: "More",
-                            icon: Image.asset(AppIcons.profile,
+                            icon: Image.asset(AppIcons.more,
                                 height: 24.sp,
                               color: widget.selectedIndex == 3
                                 ? AppColor.primary

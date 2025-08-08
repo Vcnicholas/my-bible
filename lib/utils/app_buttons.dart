@@ -64,7 +64,7 @@ class AppButton extends StatelessWidget {
         end: Alignment.bottomCenter),
           borderRadius: BorderRadius.circular(100.r),
           //color: Colors.red,
-          border: Border.all(
+          border: border?? Border.all(
               width: 1,
               color: buttonType == ButtonType.fill
                   ? Colors.transparent

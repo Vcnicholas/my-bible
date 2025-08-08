@@ -47,6 +47,7 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: AppStrings.appName,
             theme: ThemeData(primarySwatch: Colors.blue),
+            themeMode: ThemeMode.system,
             onGenerateRoute: AppRouter.generateRoute,
              //home:  CustomCheckboxDemo(),
              home: const SplashScreen(),
