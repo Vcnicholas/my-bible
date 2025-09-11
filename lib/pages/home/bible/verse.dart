@@ -41,6 +41,8 @@ class Verse extends StatelessWidget {
                     Row(
                       children: [
                         BackButtons(),
+                        20.w.sbW,
+                        AppText('${bookName} $chapter', size: 24.sp, color: AppColor.primary,)
                       ],
                     ),
                       20.h.sbH,
@@ -70,7 +72,8 @@ class Verse extends StatelessWidget {
                             ),
                           );}
                         )
-                        ,)
+                        ,),
+                    20.h.sbH
                   ],
                 ),
               ),
